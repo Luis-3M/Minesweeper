@@ -92,6 +92,10 @@ function validateForm() {
 		login_div.style.display = 'none';
 		menu_div.style.display = '';
 		rank_div.style.display = '';
+	} else {
+		alert(serverResponse["error"]);
+		menu_div.style.display = 'none';
+		login_div.style.display = '';
 	}
 	/*
 	var xhr = new XMLHttpRequest();
