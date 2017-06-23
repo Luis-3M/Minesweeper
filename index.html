@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Giant Bomb</title>
+<link type="text/css" rel="stylesheet" href="stylesheet.css">
+<script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+	<div id="image"></div>
+	<hr>
+	<div id="login_page" style="display:">
+		<form class="login_form" action="#" name="login_form"
+			onsubmit="return validateForm()">
+			<h1>Login!</h1>
+			<div class="section">
+				<span>1</span>Username &amp; Password:
+			</div>
+			<div class="inner-wrap">
+				<label>Username: <input type="text" name="name"
+					pattern="[a-zA-Z]{5,15}"
+					title="Minimum 5 letters, Maximum 15 letters" required />
+				</label> <label>Password: <input type="password" name="pass"
+					pattern="[a-zA-Z]{4,}" title="Minimum 4 letters" required>
+				</label>
+			</div>
+			<input type="submit" class="submit">
+		</form>
+	</div>
+	<div id="menu_page" style="display: none">
+		<form class="menu_form" action="#" name="menu_form">
+			<h1>Menu</h1>
+			<div class="section">
+				<span>2</span>Difficulty
+			</div>
+			<div class="inner-wrap">
+				<div class="container">
+					<input type="radio" name="level" value="beginner" checked>Beginner
+					<input type="radio" name="level" value="intermediate">Intermediate
+					<input type="radio" name="level" value="expert">Expert
+				</div>
+			</div>
+		</form>
+		<div class="section">
+			<span>3</span>Players
+		</div>
+		<div class="inner-wrap">
+			<div class="container">
+				<input type="radio" name="mode" value="single" checked>Single
+				Player <input type="radio" name="mode" value="multi">Multi
+				Player
+			</div>
+		</div>
+		<input type="button" class="button" value="Start Game!"
+			onclick="return goIndex()">
+	</div>
+	<div id="rank_page" style="display: none">
+		<h1>High Score</h1>
+		<div class="section">Username - Points - Difficulty</div>
+		<div class="inner-wrap"></div>
+	</div>
+	<div id="controls" style="display: none">
+		<div id="timer_img">
+			<img src="img/clock.jpg" alt="clock">
+		</div>
+		<div id="timer" style="display: none">0</div>
+		<div id="flag_img">
+			<img src="img/flag.bmp" alt="flag">
+		</div>
+		<div id="flag" style="display: none"></div>
+		<div id="newGame" onclick="return newGame();" style="display: none">Restart!</div>
+		<div id="quitGame" onclick="return quitGame();" style="display: none">Exit!</div>
+	</div>
+	<div id="game_page" style="display: none">
+		<canvas id="gCanvas" width="900" height="900"> </canvas>
+	</div>
+</body>
+</html>
