@@ -87,6 +87,13 @@ function validateForm() {
 		'pass' : pass
 	};
 	console.log(params);
+	if(user == 'admin' && pass == 'admin') {
+		hideGame();
+		login_div.style.display = 'none';
+		menu_div.style.display = '';
+		rank_div.style.display = '';
+	}
+	/*
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "http://twserver.alunos.dcc.fc.up.pt:8000/register", true);
 	xhr.setRequestHeader('Content-Type', 'application/json');
@@ -104,6 +111,7 @@ function validateForm() {
 		}
 	}
 	xhr.send(JSON.stringify(params));
+	*/
 	return false;
 };
 
@@ -420,7 +428,7 @@ function saveScore() {
 		'score' : score,
 	});
 	highscore[level].forEach(function(entry) {
-		scoreDiv[0].innerHTML += entry.user + ' - ' + entry.score + level
+		scoreDiv[0].innerHTML += entry.user + ' - ' + entry.score + ' - ' + level
 				+ '<br />';
 	});
 	return false;
